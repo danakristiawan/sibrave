@@ -29,7 +29,8 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table class="table table-bordered">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
                   <thead>                  
                     <tr>
                       <th style="width: 10px">#</th>
@@ -77,6 +78,7 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
