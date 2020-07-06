@@ -56,6 +56,97 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Data Kegiatan</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                  <thead>                  
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Uraian</th>
+                      <th>Pelaksanaan</th>
+                      <th>Target</th>
+                      <th>Capaian</th>
+                      <th>Persentase</th>
+                      <th style="width: 40px">%</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Sensus Penduduk 2010</td>
+                      <td>1 Januari 2010 - 31 Maret 2010</td>
+                      <td>5.125</td>
+                      <td>4.000</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-danger">55%</span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>Sensus Ekonomi 2012</td>
+                      <td>1 Maret 2012 - 31 Agustus 2012</td>
+                      <td>3.123</td>
+                      <td>1.200</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-warning">70%</span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>Sensus Pertanian 2013</td>
+                      <td>1 Februari 2013 - 31 Maret 2013</td>
+                      <td>7.321</td>
+                      <td>8.000</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-primary">30%</span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Sensus Penduduk 2020</td>
+                      <td>1 April 2020 - 31 Mei 2020</td>
+                      <td>2.543</td>
+                      <td>3.400</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                  <li class="page-item"><a class="page-link" href="#">«</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 </div>
 @endsection
