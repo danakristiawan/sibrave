@@ -4,7 +4,8 @@
         <h5>Menu</h5>
         <hr class="mb-4" color=grey>
         <p><a href="{{ url('home') }}"><i class="fas fa-home"></i> &nbsp;Beranda</a></p>
-        <p><a href="{{ url('home') }}"><i class="fas fa-chart-pie"></i> &nbsp;Laporan</a></p>
+        <p><a href="{{ url('report') }}"><i class="fas fa-chart-pie"></i> &nbsp;Laporan</a></p>
+        <p><a href="{{ url('profile') }}"><i class="fas fa-user"></i> &nbsp;Profil</a></p>
         <hr color=grey>
         <p><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i

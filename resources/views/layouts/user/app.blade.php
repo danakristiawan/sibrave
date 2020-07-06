@@ -29,6 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
     @yield('content-header')
     @yield('content')
+    @yield('modal')
   </div>
   <!-- /.content-wrapper -->
   @include('layouts.user.aside')

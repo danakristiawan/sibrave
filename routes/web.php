@@ -24,6 +24,10 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
     Route::get('/home', 'User\HomeController@index');
+    Route::get('/target', 'User\TargetController@index');
+    Route::get('/achievement', 'User\AchievementController@index');
+    Route::get('/report', 'User\ReportController@index');
+    Route::get('/profile', 'User\ProfileController@index');
 });
 
 Route::group([

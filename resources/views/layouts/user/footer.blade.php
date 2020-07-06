@@ -4,5 +4,5 @@
         http://www.sibrave.com
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2020 <a href="#">Istiqamah Rani</a>.</strong> All rights reserved.
+    Copyright &copy; 2020 <a href="#">Istiqamah Rani</a>. All rights reserved.
 </footer>
