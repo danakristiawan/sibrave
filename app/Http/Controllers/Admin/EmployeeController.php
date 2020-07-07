@@ -59,7 +59,7 @@ class EmployeeController extends Controller
             'npwp' => $request->npwp,
         ]);
 
-        return redirect('admin/employee')->with('status', 'Data was successfully added!');
+        return redirect('admin/employee')->with('status', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -81,7 +81,8 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+
+        return view('admin.employee.edit', compact('employee'));
     }
 
     /**
@@ -93,7 +94,29 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        //
+        $request->validate([
+            'nik' => 'required|size:16',
+            'nama' => 'required',
+            'tempatlhr' => 'required',
+            'tgllhr' => 'required',
+            'alamat' => 'required',
+            'nohp' => 'required',
+            'rekening' => 'required',
+            'npwp' => 'required',
+        ]);
+
+        Employee::where('id', $employee->id)->update([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'tempatlhr' => $request->tempatlhr,
+            'tgllhr' => $request->tgllhr,
+            'alamat' => $request->alamat,
+            'nohp' => $request->nohp,
+            'rekening' => $request->rekening,
+            'npwp' => $request->npwp,
+        ]);
+
+        return redirect('admin/employee')->with('status', 'Data berhasil diubah!');
     }
 
     /**
@@ -104,6 +127,8 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        Employee::destroy($employee->id);
+
+        return redirect('admin/employee')->with('status', 'Data berhasil dihapus!');
     }
 }

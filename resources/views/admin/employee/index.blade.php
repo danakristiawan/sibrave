@@ -58,6 +58,7 @@
                                     <th>No HP</th>
                                     <th>Rekening</th>
                                     <th>NPWP</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -65,11 +66,34 @@
                                     <tr>
                                         <td>{{ $employee->nik }}</td>
                                         <td>{{ $employee->nama }}</td>
-                                        <td>{{ $employee->tempatlhr }}, {{ $employee->tempatlhr.', '.date('d-m-Y', strtotime($employee->tgllhr)) }}</td>
+                                        <td>{{ $employee->tempatlhr.', '.date('d-m-Y', strtotime($employee->tgllhr)) }}</td>
                                         <td>{{ $employee->alamat }}</td>
                                         <td>{{ $employee->nohp }}</td>
                                         <td>{{ $employee->rekening }}</td>
                                         <td>{{ $employee->npwp }}</td>
+                                        <td>
+                                            <form
+                                            action="{{ url('admin/employee/'. $employee->id.'/edit') }}"
+                                            method="post" class="d-inline">
+                                            @method('get')
+                                            @csrf
+                                            
+                                            <button type="submit" class="btn btn-sm btn-success" data-toggle="tooltip"
+                                                data-placement="bottom" title=""
+                                                data-original-title="Ubah"><i
+                                                    class="fas fa-edit"></i></button>
+                                        </form>
+
+                                        <form
+                                            action="{{ url('admin/employee/'. $employee->id.'') }}"
+                                            method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-danger" data-toggle="tooltip"
+                                                data-placement="bottom" title=""
+                                                data-original-title="Hapus" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?');"><i class="fas fa-trash"></i></button>
+                                        </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -110,6 +134,13 @@
             "autoWidth": false,
             "responsive": true,
         });
+        "use strict";
+
+        try {
+            $('[data-toggle="tooltip"]').tooltip();
+        } catch (error) {
+            console.log(error);
+        }
     });
 
 </script>
