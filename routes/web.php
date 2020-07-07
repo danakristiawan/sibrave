@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,6 @@ Route::group([
     'middleware' => ['auth', 'role:admin|super']
 ], function () {
     Route::get('/home', 'Admin\HomeController@index')->name('admin.home');
-    Route::get('/activity', 'Admin\ActivityController@index');
-    Route::get('/employee', 'Admin\EmployeeController@index');
+    Route::resource('employee', 'Admin\EmployeeController');
+    Route::resource('activity', 'Admin\ActivityController');
 });

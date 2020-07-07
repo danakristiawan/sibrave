@@ -15,7 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('admin.employee');
+        $employees = Employee::all();
+        return view('admin.employee.index', compact('employees'));
     }
 
     /**
@@ -25,7 +26,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.employee.create');
     }
 
     /**
@@ -36,7 +37,29 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nik' => 'required|unique:employees|size:16',
+            'nama' => 'required',
+            'tempatlhr' => 'required',
+            'tgllhr' => 'required',
+            'alamat' => 'required',
+            'nohp' => 'required',
+            'rekening' => 'required',
+            'npwp' => 'required',
+        ]);
+
+        Employee::create([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'tempatlhr' => $request->tempatlhr,
+            'tgllhr' => $request->tgllhr,
+            'alamat' => $request->alamat,
+            'nohp' => $request->nohp,
+            'rekening' => $request->rekening,
+            'npwp' => $request->npwp,
+        ]);
+
+        return redirect('admin/employee')->with('status', 'Data was successfully added!');
     }
 
     /**

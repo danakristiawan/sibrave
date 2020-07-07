@@ -16,8 +16,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ url('plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ url('dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ url('plugins/datepicker/datepicker3.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -65,5 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ url('dist/js/adminlte.min.js') }}"></script>
+<script src="{{ url('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+@yield('js')
 </body>
 </html>
