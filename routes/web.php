@@ -41,5 +41,7 @@ Route::group([
     'prefix' => 'admin',
     'middleware' => ['auth', 'role:admin|super']
 ], function () {
-    Route::get('/home', 'Admin\HomeController@index');
+    Route::get('/home', 'Admin\HomeController@index')->name('admin.home');
+    Route::get('/activity', 'Admin\ActivityController@index');
+    Route::get('/employee', 'Admin\EmployeeController@index');
 });
