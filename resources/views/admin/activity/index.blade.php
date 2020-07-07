@@ -13,12 +13,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Petugas</h1>
+                <h1 class="m-0 text-dark">Kegiatan</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ url('admin/home') }}">Beranda</a></li>
-                    <li class="breadcrumb-item active">Petugas</li>
+                    <li class="breadcrumb-item active">Kegiatan</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -42,40 +42,38 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Daftar Seluruh Petugas</h3>
-                        <a href="{{ route('employee.create') }}"
+                        <h3 class="card-title">Daftar Seluruh Kegiatan</h3>
+                        <a href="{{ route('activity.create') }}"
                             class="btn btn-outline-info float-right" data-toggle="tooltip"
                                                 data-placement="bottom" title=""
-                                                data-original-title="Tambah"><i class="fas fa-user-plus"></i></a>
+                                                data-original-title="Tambah"><i class="fas fa-layer-group"></i></a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>NIK</th>
                                     <th>Nama</th>
-                                    <th>TTL</th>
-                                    <th>Alamat</th>
-                                    <th>No HP</th>
-                                    <th>Rekening</th>
-                                    <th>NPWP</th>
+                                    <th>Mulai</th>
+                                    <th>Selesai</th>
+                                    <th>MAK</th>
+                                    <th>Petugas</th>
+                                    <th>Target</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($employees as $employee)
+                                @foreach($activities as $activity)
                                     <tr>
-                                        <td>{{ $employee->nik }}</td>
-                                        <td>{{ $employee->nama }}</td>
-                                        <td>{{ $employee->tempatlhr.', '.date('d-m-Y', strtotime($employee->tgllhr)) }}</td>
-                                        <td>{{ $employee->alamat }}</td>
-                                        <td>{{ $employee->nohp }}</td>
-                                        <td>{{ $employee->rekening }}</td>
-                                        <td>{{ $employee->npwp }}</td>
+                                        <td>{{ $activity->nama }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($activity->tglmulai)) }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($activity->tglselesai)) }}</td>
+                                        <td>{{ $activity->mak }}</td>
+                                        <td>{{ $activity->petugas }}</td>
+                                        <td>{{ $activity->target }}</td>
                                         <td>
                                             <form
-                                            action="{{ url('admin/employee/'. $employee->id.'/edit') }}"
+                                            action="{{ url('admin/activity/'. $activity->id.'/edit') }}"
                                             method="post" class="d-inline">
                                             @method('get')
                                             @csrf
@@ -87,7 +85,7 @@
                                         </form>
 
                                         <form
-                                            action="{{ url('admin/employee/'. $employee->id.'') }}"
+                                            action="{{ url('admin/activity/'. $activity->id.'') }}"
                                             method="post" class="d-inline">
                                             @method('delete')
                                             @csrf
