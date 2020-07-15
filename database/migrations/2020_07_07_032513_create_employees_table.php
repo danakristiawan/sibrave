@@ -21,6 +21,8 @@ class CreateEmployeesTable extends Migration
             $table->date('tgllhr');
             $table->string('alamat');
             $table->string('nohp', 15);
+            $table->string('namabank');
+            $table->string('unit');
             $table->string('rekening', 30);
             $table->string('npwp', 15);
             $table->timestamps();
