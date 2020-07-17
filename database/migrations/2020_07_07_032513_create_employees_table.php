@@ -17,14 +17,19 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table->string('nik', 16)->unique();
             $table->string('nama');
+            $table->string('alamat_domisili');
+            $table->string('alamat_ktp');
             $table->string('tempatlhr');
             $table->date('tgllhr');
-            $table->string('alamat');
             $table->string('nohp', 15);
+            $table->string('nowa', 15);
+            $table->string('npwp',15);
+            $table->string('rekening',30);
             $table->string('namabank');
-            $table->string('unit');
-            $table->string('rekening', 30);
-            $table->string('npwp', 15);
+            $table->string('namacabang');
+            $table->string('namarekening');
+            $table->string('alamatemail');
+            $table->string('status');
             $table->timestamps();
         });
     }
