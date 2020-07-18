@@ -29,6 +29,10 @@ class CreateActivitiesTable extends Migration
             $table->date('tglmulai');
             $table->date('tglselesai');
             $table->string('mak', 50);
+            $table->double('honorpmlorg');
+            $table->double('honorpmlnon');
+            $table->double('honorpclorg');
+            $table->double('honorpclnon');
             $table->timestamps();
         });
     }

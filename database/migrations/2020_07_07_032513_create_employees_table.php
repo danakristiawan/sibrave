@@ -30,6 +30,8 @@ class CreateEmployeesTable extends Migration
             $table->string('namarekening');
             $table->string('alamatemail');
             $table->string('status');
+            $table->string('nip');
+            $table->string('jabatan');
             $table->timestamps();
         });
     }
