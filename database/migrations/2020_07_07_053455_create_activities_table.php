@@ -15,12 +15,24 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis');
+            $table->string('kategorijenis');
+            $table->string('subjectmatter');
             $table->string('nama');
+            $table->string('namatarget');
+            $table->string('kettarget');
+            $table->double('jmltarget',8);
+            $table->integer('jmlpmlorg',6);
+            $table->integer('jmlpmlnon',6);
+            $table->integer('jmlpclorg',6);
+            $table->integer('jmlpclnon',6);
             $table->date('tglmulai');
             $table->date('tglselesai');
             $table->string('mak', 50);
-            $table->double('petugas', 8);
-            $table->double('target', 8);
+            $table->double('honorpmlorg');
+            $table->double('honorpmlnon');
+            $table->double('honorpclorg');
+            $table->double('honorpclnon');
             $table->timestamps();
         });
     }
